@@ -1,0 +1,14 @@
+.basket-button {
+    width: 150px;
+    height: 30px;
+    background-color: #189ab4;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 10px;
+    border: 2px solid #d4f1f4;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #d4f1f4;
+    }
+}

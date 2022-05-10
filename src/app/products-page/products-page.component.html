@@ -1,0 +1,45 @@
+<div class='product-component'>
+
+    <div class='header'>
+        <h1 class=''>All Products</h1>
+    </div>
+
+    <div class="filtering">
+        <div>
+            Search:
+            <input type="text" [(ngModel)]='listFilter'>
+        </div>
+
+        <div class='categories'>
+            Categories:
+            <button class='category-button' *ngFor='let category of categories'>
+                <div class="category-text" [innerHtml]='category' (click)='setClickedCategory($event.target)'></div>
+            </button>
+        </div>
+
+        <div>
+            {{cardClickedTitle}}
+        </div>
+    </div>
+
+    <div class="page-cards-container">
+        <div class='cards-component-holder' *ngIf='products.length > 0; else loading'>
+            <app-card *ngFor='let product of filteredProducts' [product]='product'
+                (cardClick)="handleCardClick($event)">
+            </app-card>
+        </div>
+
+        <ng-template #loading>
+            <div *ngIf="!serverError">
+                Loading from server...
+            </div>
+
+            <div *ngIf="serverError">
+                An error has occurred, cannot load products.
+                <br>
+                Message: {{errorMessage}}
+            </div>
+        </ng-template>
+    </div>
+
+</div>

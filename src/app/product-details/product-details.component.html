@@ -1,0 +1,17 @@
+<app-card
+*ngIf="product; else loading"
+[product]="product"
+[detailsPage]="true"></app-card>
+<ng-template #loading>
+    <div>
+        Loading...
+    </div>
+</ng-template>
+
+<div *ngIf="basket">
+    Added
+</div>
+
+<button
+class="basket-button"
+(click)="handleClick()">Add to Basket</button>

@@ -1,0 +1,41 @@
+.product-component {
+    padding: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cards-component-holder {
+    display: inline-flex;
+    flex-wrap: wrap
+}
+
+.categories {
+    width: 80%;
+    display: inline-flex;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.category-button {
+    width: 100px;
+    margin-left: 20px;
+    padding: 0px;
+    background-color: #d4f1f4;
+    border-radius: 10px;
+    border: 1px solid white;
+    cursor: pointer;
+
+    div {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.category-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filtering {
+    margin-bottom: 20px;
+}

@@ -1,0 +1,20 @@
+<div class="navbar">
+    <div class="links">
+        <a [routerLink]="['/home']">home</a>
+        <a [routerLink]="['/store']">store</a>
+        <div
+        *ngIf="user; else signup"
+        class="username">
+            {{user.username}}
+        </div>
+        <ng-template #signup>
+            <a routerLink="/signup">sign up</a>
+        </ng-template>
+    </div>
+    <div class="basket">
+        <span>
+            basket:
+        </span>
+        {{basketCount}}
+    </div>
+</div>

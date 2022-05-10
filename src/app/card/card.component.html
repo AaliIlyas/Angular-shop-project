@@ -1,0 +1,19 @@
+<div class='card {{detailsPage ? "card-image-detail" : ""}}'
+(click)="handleCardClick()">
+    <img class='card-image'
+    [src]='product.image'
+    [alt]='product.title'>
+    <p class='card-p'>{{product.title}}</p>
+    <p class='card-p'>{{product.price | currency:'GBP':'symbol':'1.2-2' }}</p>
+    <p class='card-p'>category: {{product.category}}</p>
+    <p class='card-p'>rating: {{product.rating.rate}} ({{product.rating.count}} votes)</p>
+    <div *ngIf="detailsPage">
+        <span>
+            <p>More details:</p>
+            <p class='card-p'>{{product.description}}</p>
+        </span>
+    </div>
+    <p *ngIf="detailsPage" class='card-p'>Product ID: {{product.id}}</p>
+    <a class="button" *ngIf="!detailsPage"
+    [routerLink]="[product.id]">Details</a>
+</div>
